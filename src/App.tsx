@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+// styles
+import { AppGlobal, HeaderWrapper } from "./App.style";
+import "./App.css";
+// data
+import { getAnalytics, getOrderData, AnalyticsData } from "./dataGen";
+import Header from "./components/Header";
+import DashboardHeader from "./components/DashboardHeader";
+import AnalyticsList from "./components/AnalyticsList";
+import OrderTable from "./components/OrderTable";
+
+interface Props {}
+
+const App = (props: Props) => {
+  const analyticsData = getAnalytics();
+  const orderData = getOrderData();
+  const [analytics] = useState<AnalyticsData>({ ...analyticsData });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className="content-wrapper">
+        <DashboardHeader />
+        <AnalyticsList analytics={analytics} />
+        <OrderTable orderData={orderData} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
