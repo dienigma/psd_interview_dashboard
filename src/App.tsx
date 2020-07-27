@@ -23,9 +23,14 @@ const App = (props: Props) => {
       <div style={{ margin: 30 }}>
         <DashboardHeader />
         <AnalyticsList />
-        <Tabs size="md" variant="enclosed" marginTop={5}>
+        <Tabs
+          size="md"
+          variant="enclosed"
+          marginTop={5}
+          borderBottomColor="#CBD5E0"
+        >
           <TabList>
-            <Grid templateColumns="repeat(4,1fr)" w="50%" h="15" gap={4}>
+            <Grid templateColumns="repeat(4,1fr)" w="50%" h="15">
               <Tab>All Orders</Tab>
               <Tab>Active</Tab>
               <Tab>Unpaid</Tab>

@@ -1,6 +1,7 @@
 import React from "react";
 import { OrderDetails } from "../dataGen";
 import { Grid, Box, Text } from "@chakra-ui/core";
+import gravatar from "gravatar";
 interface Props {
   orderData: OrderDetails[];
 }
@@ -16,6 +17,7 @@ const statusStyles = {
 };
 
 const OrderTable = ({ orderData }: Props) => {
+  console.log(gravatar.url("joshi.chinmay09@gmail.com"));
   return (
     <Box w="100%">
       <Box
@@ -60,7 +62,15 @@ const OrderTable = ({ orderData }: Props) => {
             </Text>
             <Text paddingTop={2}>{item.orderID}</Text>
             <Text paddingTop={2}>{item.created}</Text>
-            <Text paddingTop={2}>{item.customerName}</Text>
+            <Text paddingTop={2} textAlign="center">
+              <img
+                src="http://www.gravatar.com/avatar/59a7e06ff3d697c0a3130d850a76d474"
+                width="20px"
+                height="20px"
+                style={{ borderRadius: "50%", marginRight: 10 }}
+              />
+              {item.customerName}
+            </Text>
             <Text
               paddingTop={2}
               color="white"
