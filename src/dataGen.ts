@@ -22,10 +22,10 @@ export type OrderDetails = {
 };
 
 export type AnalyticsData = {
-  activeOrders: number;
-  unfullfilled: number;
-  pendingReceipts: number;
-  fullfilled: number;
+  text: string;
+  data: number;
+  color: string;
+  fill: string;
 };
 
 export const getOrderData = (): OrderDetails[] => {
@@ -93,11 +93,36 @@ export const getOrderData = (): OrderDetails[] => {
   ];
 };
 
-export const getAnalytics = (): AnalyticsData => {
-  return {
-    activeOrders: 1046,
-    unfullfilled: 159,
-    pendingReceipts: 624,
-    fullfilled: 263,
-  };
+export const getAnalytics = (): AnalyticsData[] => {
+  return [
+    {
+      text: "Active Orders",
+      data: 1046,
+      color: "rgba(241, 196, 15,1.0)",
+      fill: "rgba(241, 196, 15,0.2)",
+      // activeOrders: 1046,
+      // unfullfilled: 159,
+      // pendingReceipts: 624,
+      // fullfilled: 263,
+    },
+    {
+      text: "Unfullfilled",
+      data: 159,
+      color: "rgba(46, 204, 113,1.0)",
+      fill: "rgba(46, 204, 113,0.2)",
+    },
+
+    {
+      text: "Pending Receipts",
+      data: 624,
+      color: "rgba(142, 68, 173,1.0)",
+      fill: "rgba(142, 68, 173,0.2)",
+    },
+    {
+      text: "Fullfilled",
+      data: 159,
+      color: "rgba(231, 76, 60,1.0)",
+      fill: "rgba(231, 76, 60,0.2)",
+    },
+  ];
 };
