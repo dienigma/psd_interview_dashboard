@@ -29,7 +29,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `yarn start`
 
-To run the bult app on port 8080.<br />
+To run the built app on port 8080.<br />
 Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 The page will reload if you make edits.<br />
